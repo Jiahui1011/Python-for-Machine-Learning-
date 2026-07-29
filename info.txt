@@ -1,0 +1,69 @@
+Clinic No-Show Prediction
+=========================
+
+SCENARIO
+You are a junior machine learning analyst for a healthcare clinic. The clinic wants to predict whether a patient will miss an appointment.
+
+SUPERVISED LEARNING METHOD
+Binary Classification
+
+MODEL
+Decision Tree Classifier
+
+TARGET COLUMN
+missed_appointment
+
+TASKS
+1. Load the dataset and inspect the first five rows, column names, data types, and missing values.
+2. Clean the dataset. Handle duplicate rows and missing values appropriately.
+3. Identify columns that should not be used as model features, such as ID or raw date columns.
+4. Explore the distribution of the target column: missed_appointment.
+5. Define X and y, then encode categorical features using pd.get_dummies().
+6. Split the data into 70% training data and 30% testing data using random_state=42.
+7. Build a DecisionTreeClassifier, train it, and make predictions.
+8. Evaluate the model using accuracy_score and display the result as a percentage.
+9. Write a short conclusion: Is the model performing well? What could be improved?
+
+REQUIRED FILES TO COMPLETE
+- Dataset.xlsx
+- Independent Case Study Student Workbook
+- Python (.py) file
+
+IMPORTANT
+- Complete the work independently.
+- Use test_size=0.3 and random_state=42.
+- Ensure the full Python file can run from beginning to end.
+- Record your findings and model result in the workbook.
+
+📌 Checkpoint 1:
+Number of rows: 324
+Number of columns: 12
+Target column: missed_appointment
+Number of duplicate rows: 4
+Total missing values: age 8, sms_reminder 8, distance_to_clinic_km 8, insurance_type 110
+ID column: appointment_id
+Date column: booking_date  
+Categorical columns: sms_reminder, chronic_condition, appointment_day, time_slot, insurance_type
+Numerical columns: age, waiting_days, previous_no_shows, distance_to_clinic_km
+
+📌 Checkpoint 2: Data Cleaning & Preparation
+
+Number of rows after removing duplicates: 320
+Duplicate rows remaining: 0
+Missing values remaining: sms_reminder 8, insurance_type 109
+Columns removed from X, features: X = df_clean.drop(columns=['appointment_id', 'booking_date', 'missed_appointment'], errors='ignore')
+Target column used for y: y = df_clean['missed_appointment']
+
+📌 Checkpoint 3: Model Building & Evaluation
+
+Model used: DecisionTreeClassifier
+Test size: 30%
+Train-test split random state: 42
+Model random state: 42
+Number of training rows: 224
+Number of testing rows: 96
+Correct predictions using -> correct_predictions = (prediction == y_test).sum(): 71
+Accuracy:  0.7395833333333334
+
+
+
