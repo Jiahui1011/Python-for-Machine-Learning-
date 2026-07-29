@@ -125,4 +125,4 @@ correct_predictions = (clinic_prediction == y_test).sum()
 print(correct_predictions)
 
 accuracy = accuracy_score(y_test, clinic_prediction)
-print('Accuracy:', accuracy)
+print(f"Accuracy: {accuracy:.2%}")
